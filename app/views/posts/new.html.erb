@@ -1,5 +1,6 @@
 <h1>投稿する</h1>
 <%= form_with model:@post, url: posts_path, method: :post  do |f| %>
+  <%= f.file_field :image %><br>
   <%= f.label :title %><br>
   <%= f.text_field :title %><br>
 
