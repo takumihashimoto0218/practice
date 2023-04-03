@@ -12,11 +12,9 @@
   </head>
 
   <body>
+    <%= render "posts/shared/header" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= link_to "ユーザー一覧", users_path %>
-    <%= link_to "投稿一覧", posts_path %>
-    <%= link_to  "投稿する", new_post_path %>
     <%= yield %>
   </body>
 </html>

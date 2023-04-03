@@ -66,3 +66,5 @@ end
 gem 'devise'
 gem 'devise-i18n'
 gem 'importmap-rails'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'

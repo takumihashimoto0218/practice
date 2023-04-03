@@ -12,17 +12,9 @@
   </head>
 
   <body>
+    <%= render "users/shared/header" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-      <%= link_to "ログアウト", destroy_user_session_path,  data: { turbo_method: :delete } %> 
-    <% else %>
-      <%= link_to "ログイン", new_user_session_path %>
-      <%= link_to "新規登録", new_user_registration_path %>
-    <% end %>
-    <%= link_to "ホーム", users_path %>
-    <%= link_to "投稿一覧", posts_path %>
-    <%= link_to  "投稿する", new_post_path %>
     <%= yield %>
   </body>
 </html>

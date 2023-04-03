@@ -1,6 +1,11 @@
-  <h1>User一覧</h1>
+<h1>User一覧</h1>
 <% @users.each do |user| %>
-  <%= image_tag user.image, width:100 if user.image.attached? %>
-  <%= link_to user.name, user_path(user) %>
-  <%= user.email %>
+  <div class="card" style="width: 16rem;">
+    <%= image_tag user.image, width:254 if user.image.attached? %>
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to user.name, user_path(user) %></h5>
+      <p class="card-text"><%= user.email %></p>
+      <button type="button" class="btn btn-outline-primary"><%= link_to "詳細", user_path(user) %>
+    </div>
+  </div><br>
 <% end %>
