@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts, dependent: :destroy
   has_one_attached :image
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["email", "name"]
+  end
 end

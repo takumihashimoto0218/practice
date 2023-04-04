@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_q, only: [:index]
   def index
-    @posts = Post.all
+    @posts = @q.result(distinct: true)
   end
 
   def show
@@ -46,5 +47,9 @@ class PostsController < ApplicationController
 
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def set_q
+      @q = Post.ransack(params[:q])
     end
 end
